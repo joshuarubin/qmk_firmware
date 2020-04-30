@@ -38,5 +38,5 @@ Ported to QMK by Peter Roe <pete@13bit.me>
 #define ADB_PORT        PORTD
 #define ADB_PIN         PIND
 #define ADB_DDR         DDRD
-#define ADB_DATA_BIT    0
+#define ADB_DATA_BIT    6
 //#define ADB_PSW_BIT     1       // optional
