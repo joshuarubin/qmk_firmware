@@ -17,34 +17,37 @@
 #include "joshuarubin.h"
 
 // Defines names for use in layer keycodes and the keymap
+// clang-format off
 enum layer_names {
   _BASE,
   _FN,
   _DIRECTION,
   _BLING
 };
+// clang-format on
 
-#define FN     MO(_FN)
-#define BLING  MO(_BLING)
+#define FN MO(_FN)
+#define BLING MO(_BLING)
 #define DIR(X) LT(_DIRECTION, X)
 
 #ifndef KEYBOARD_wilba_tech
-#define EF_DEC KC_NO
-#define EF_INC KC_NO
-#define H1_DEC KC_NO
-#define H1_INC KC_NO
-#define H2_INC KC_NO
-#define H2_DEC KC_NO
-#define BR_DEC KC_NO
-#define BR_INC KC_NO
-#define S1_DEC KC_NO
-#define S1_INC KC_NO
-#define S2_DEC KC_NO
-#define S2_INC KC_NO
-#define ES_DEC KC_NO
-#define ES_INC KC_NO
+#    define EF_DEC KC_NO
+#    define EF_INC KC_NO
+#    define H1_DEC KC_NO
+#    define H1_INC KC_NO
+#    define H2_INC KC_NO
+#    define H2_DEC KC_NO
+#    define BR_DEC KC_NO
+#    define BR_INC KC_NO
+#    define S1_DEC KC_NO
+#    define S1_INC KC_NO
+#    define S2_DEC KC_NO
+#    define S2_INC KC_NO
+#    define ES_DEC KC_NO
+#    define ES_INC KC_NO
 #endif
 
+// clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_BASE] = LAYOUT_60_ansi(
@@ -80,3 +83,4 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 )
 
 };
+// clang-format on

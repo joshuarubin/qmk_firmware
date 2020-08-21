@@ -18,14 +18,19 @@
 
 // Defines names for use in layer keycodes and the keymap
 enum layer_names {
-  _BASE,
-  _FN,
-  _DIRECTION,
+    _BASE,
+    _FN,
+    _DIRECTION,
 };
 
-#define FN     MO(_FN)
+#define FN MO(_FN)
 #define DIR(X) LT(_DIRECTION, X)
 
+#ifndef BLUETOOTH_ENABLE
+#    define BT_UNPAIR KC_NO
+#endif
+
+// clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_BASE] = LAYOUT_60_tsangan_hhkb(
@@ -37,11 +42,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [_FN] = LAYOUT_60_tsangan_hhkb(
-	_______,  KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,   KC_F12,   KC_INS,  KC_DEL,
-	KC_CAPS,  RESET,    _______,  _______,  _______,  _______,  _______,  UC_MOD,   KC_PSCR,  KC_SLCK,  KC_PAUS,  KC_UP,    _______,  _______,
-	RGB_RMOD, KC_VOLD,  KC_VOLU,  KC_MUTE,  KC_EJCT,  _______,  KC_ASTR,  KC_SLSH,  KC_HOME,  KC_PGUP,  KC_LEFT,  KC_RGHT,            _______,
-	RGB_MOD,            RGB_HUD,  RGB_HUI,  RGB_SAD,  RGB_SAI,  _______,  KC_PLUS,  KC_MINS,  KC_END,   KC_PGDN,  KC_DOWN,  BL_STEP,  _______,
-	RGB_TOG,  RGB_VAD,  RGB_VAI,                                _______,                                          AG_TOGG,  AG_TOGG,  BL_TOGG
+	BT_UNPAIR,  KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,   KC_F12,   KC_INS,  KC_DEL,
+	KC_CAPS,    RESET,    _______,  _______,  _______,  _______,  _______,  UC_MOD,   KC_PSCR,  KC_SLCK,  KC_PAUS,  KC_UP,    _______,  _______,
+	RGB_RMOD,   KC_VOLD,  KC_VOLU,  KC_MUTE,  KC_EJCT,  _______,  KC_ASTR,  KC_SLSH,  KC_HOME,  KC_PGUP,  KC_LEFT,  KC_RGHT,            _______,
+	RGB_MOD,              RGB_HUD,  RGB_HUI,  RGB_SAD,  RGB_SAI,  _______,  KC_PLUS,  KC_MINS,  KC_END,   KC_PGDN,  KC_DOWN,  BL_STEP,  _______,
+	RGB_TOG,    RGB_VAD,  RGB_VAI,                                _______,                                          AG_TOGG,  AG_TOGG,  BL_TOGG
 ),
 
 [_DIRECTION] = LAYOUT_60_tsangan_hhkb(
@@ -53,3 +58,4 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 };
+// clang-format on
