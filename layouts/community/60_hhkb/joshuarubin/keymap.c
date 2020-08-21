@@ -18,16 +18,17 @@
 
 // Defines names for use in layer keycodes and the keymap
 enum layer_names {
-  _BASE,
-  _FN,
-  _DIRECTION,
+    _BASE,
+    _FN,
+    _DIRECTION,
 };
 
-#define FN     MO(_FN)
+#define FN MO(_FN)
 #define DIR(X) LT(_DIRECTION, X)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
+    // clang-format off
 [_BASE] = LAYOUT_60_hhkb(
     KC_ESC,         KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,         KC_MINS, KC_EQL,  KC_BSLS, KC_GRV,
     KC_TAB,         KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,         KC_LBRC, KC_RBRC, KC_BSPC,
@@ -46,10 +47,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_DIRECTION] = LAYOUT_60_hhkb(
 	_______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______, _______,
-	_______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
+	_______,  _______,  _______,  _______,  _______,  TFLIP,    _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
 	_______,  XXXXXXX,  KC_HOME,  KC_PGUP,  KC_PGDN,  KC_END,   KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT,  _______,  _______,            _______,
 	_______,            _______,  _______,  _______,  _______,  _______,  KC_NDSH,  KC_MDSH,  _______,  _______,  SHRUG,    _______,  _______,
 	          _______,  _______,                                _______,                                          _______,  _______
 ),
+    // clang-format on
 
 };

@@ -73,3 +73,8 @@
 #    undef DEBOUNCE
 #    define DEBOUNCE 0
 #endif
+
+#ifdef KEYBOARD_projectkb_alice
+#    undef USB_MAX_POWER_CONSUMPTION
+#    define USB_MAX_POWER_CONSUMPTION 500
+#endif

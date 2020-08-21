@@ -17,23 +17,28 @@
 #include "joshuarubin.h"
 
 enum layers {
-  _QWERTY,
-  _LOWER, // NUMERIC
-  _RAISE, // SYMBOL
-  _DIRECTION,
-  _ADJUST
+    _QWERTY,
+    _LOWER,  // NUMERIC
+    _RAISE,  // SYMBOL
+    _DIRECTION,
+    _ADJUST
 };
 
-#define LOWER    MO(_LOWER)
+#define LOWER MO(_LOWER)
 #define RAISE(X) LT(_RAISE, X)
-#define DIR(X)   LT(_DIRECTION, X)
+#define DIR(X) LT(_DIRECTION, X)
 
 #ifdef ENCODER_ENABLE
-#define BOT_LEFT KC_MUTE
+#    define BOT_LEFT KC_MUTE
 #else
-#define BOT_LEFT KC_LALT
+#    define BOT_LEFT KC_LALT
 #endif
 
+#ifndef BLUETOOTH_ENABLE
+#    define BT_UNPAIR KC_NO
+#endif
+
+// clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_QWERTY] = LAYOUT_ortho_4x12(
@@ -70,14 +75,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_ADJUST] =  LAYOUT_ortho_4x12(
   // 0      1        2        3        4        5        6        7        8         9        10       11
-  _______,  RESET,   DEBUG,   _______, _______, _______, _______, UC_MOD,  KC_INS,   _______, KC_PSCR, _______,
-  RGB_MOD,  RGB_HUI, RGB_SAI, RGB_VAI, _______, _______, _______, _______, _______,  _______, _______, _______,
-  RGB_RMOD, RGB_HUD, RGB_SAD, RGB_VAD, _______, _______, AU_TOG,  MU_TOG,  MU_MOD,   _______, _______, _______,
-  RGB_TOG,  _______, _______, AG_TOGG, _______, _______, _______, _______, KC_SLCK,  KC_PAUS, MUV_DE,  MUV_IN
+  BT_UNPAIR, RESET,   DEBUG,   _______, _______, _______, _______, UC_MOD,  KC_INS,   _______, KC_PSCR, _______,
+  RGB_MOD,   RGB_HUI, RGB_SAI, RGB_VAI, _______, _______, _______, _______, _______,  _______, _______, _______,
+  RGB_RMOD,  RGB_HUD, RGB_SAD, RGB_VAD, _______, _______, AU_TOG,  MU_TOG,  MU_MOD,   _______, _______, _______,
+  RGB_TOG,   _______, _______, AG_TOGG, _______, _______, _______, _______, KC_SLCK,  KC_PAUS, MUV_DE,  MUV_IN
 )
 
 };
+// clang-format on
 
-layer_state_t layer_state_set_user(layer_state_t state) {
-  return update_tri_layer_state(state, _LOWER, _RAISE, _ADJUST);
-}
+layer_state_t layer_state_set_user(layer_state_t state) { return update_tri_layer_state(state, _LOWER, _RAISE, _ADJUST); }

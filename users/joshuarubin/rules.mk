@@ -33,3 +33,11 @@ ifeq ($(strip $(KEYBOARD)), kyria/rev1)
 	ENCODER_ENABLE = yes
 	RGBLIGHT_ENABLE = yes
 endif
+
+ifeq ($(strip $(KEYBOARD)), cannonkeys/an_c)
+	CONSOLE_ENABLE = no
+endif
+
+ifeq ($(strip $(KEYBOARD)), pancake/feather)
+	CONSOLE_ENABLE = no
+endif
