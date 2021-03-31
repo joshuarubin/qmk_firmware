@@ -41,3 +41,9 @@ endif
 ifeq ($(strip $(KEYBOARD)), pancake/feather)
 	CONSOLE_ENABLE = no
 endif
+
+ifeq ($(strip $(KEYBOARD)), gray_studio/think65/solder)
+	MOUSEKEY_ENABLE = no
+	CONSOLE_ENABLE  = no
+	COMMAND_ENABLE  = no
+endif

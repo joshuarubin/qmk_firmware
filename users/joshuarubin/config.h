@@ -78,3 +78,8 @@
 #    undef USB_MAX_POWER_CONSUMPTION
 #    define USB_MAX_POWER_CONSUMPTION 500
 #endif
+
+#ifdef KEYBOARD_gray_studio_think65_solder
+#    undef RGBLED_NUM
+#    define RGBLED_NUM 4
+#endif
