@@ -83,3 +83,8 @@
 #    undef RGBLED_NUM
 #    define RGBLED_NUM 4
 #endif
+
+#ifdef KEYBOARD_wilba_tech_wt60_d
+#    undef DEBOUNCE
+#    define DEBOUNCE 9
+#endif

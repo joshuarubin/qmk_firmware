@@ -14,4 +14,5 @@ enum custom_keycodes {
 #else
 #    define KC_NDSH KC_NO
 #    define KC_MDSH KC_NO
+#    define KC_ELIP KC_NO
 #endif
