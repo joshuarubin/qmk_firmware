@@ -39,10 +39,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_FN] = LAYOUT_60_hhkb(
 	_______,  KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,   KC_F12,   KC_INS, KC_DEL,
-	KC_CAPS,  RESET,    _______,  _______,  _______,  _______,  _______,  UC_MOD,   KC_PSCR,  KC_SLCK,  KC_PAUS,  KC_UP,    _______,  _______,
-	_______,  KC_VOLD,  KC_VOLU,  KC_MUTE,  KC_EJCT,  _______,  KC_ASTR,  KC_SLSH,  KC_HOME,  KC_PGUP,  KC_LEFT,  KC_RGHT,            _______,
-	_______,            _______,  _______,  _______,  _______,  _______,  KC_PLUS,  KC_MINS,  KC_END,   KC_PGDN,  KC_DOWN,  _______,  _______,
-	          _______,  _______,                                _______,                                          AG_TOGG,  AG_TOGG
+	KC_CAPS,  RESET,    _______,  _______,  _______,  _______,  _______,  UC_MOD,   KC_PSCR,  KC_SLCK,  KC_PAUS,  KC_UP,    _______,  BL_STEP,
+	RGB_MOD,  KC_VOLD,  KC_VOLU,  KC_MUTE,  KC_EJCT,  _______,  KC_ASTR,  KC_SLSH,  KC_HOME,  KC_PGUP,  KC_LEFT,  KC_RGHT,            BL_TOGG,
+	RGB_TOG,            RGB_HUD,  RGB_HUI,  RGB_SAD,  RGB_SAI,  _______,  KC_PLUS,  KC_MINS,  KC_END,   KC_PGDN,  KC_DOWN,  _______,  _______,
+	          RGB_VAD,  RGB_VAI,                                _______,                                          AG_TOGG,  AG_TOGG
 ),
 
 [_DIRECTION] = LAYOUT_60_hhkb(
